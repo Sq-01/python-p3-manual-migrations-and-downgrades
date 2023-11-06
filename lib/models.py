@@ -22,11 +22,11 @@ class Student(Base):
     id = Column(Integer(), primary_key=True)
     name = Column(String(), index=True)
     email = Column(String(55))
-    grade = Column(Integer())
+    level = Column(Integer())  # Rename the 'grade' column to 'level'
     birthday = Column(DateTime())
     enrolled_date = Column(DateTime(), default=datetime.now())
 
     def __repr__(self):
         return f"Student {self.id}: " \
             + f"{self.name}, " \
-            + f"Grade {self.grade}"
+            + f"Level {self.level}"
